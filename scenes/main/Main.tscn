@@ -1,0 +1,421 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="2"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(1180, 110)
+
+[sub_resource type="CapsuleShape2D" id="2"]
+radius = 18.0
+height = 42.0
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(0.0352941, 0.0627451, 0.0941176, 0.82)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.490196, 0.894118, 1, 0.22)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.24)
+shadow_size = 18
+
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0.0470588, 0.0862745, 0.129412, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.741176, 0.921569, 1, 0.2)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0, 0, 0, 0.32)
+shadow_size = 26
+
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(0.0313726, 0.0588235, 0.0901961, 0.74)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.647059, 0.992157, 0.862745, 0.18)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+offset_left = -200.0
+offset_top = -120.0
+offset_right = 1800.0
+offset_bottom = 1020.0
+color = Color(0.0470588, 0.0823529, 0.121569, 1)
+
+[node name="GlowA" type="ColorRect" parent="."]
+offset_left = 70.0
+offset_top = 90.0
+offset_right = 540.0
+offset_bottom = 440.0
+color = Color(0.137255, 0.533333, 0.65098, 0.18)
+
+[node name="GlowB" type="ColorRect" parent="."]
+offset_left = 1040.0
+offset_top = 440.0
+offset_right = 1530.0
+offset_bottom = 860.0
+color = Color(0.12549, 0.803922, 0.596078, 0.12)
+
+[node name="FogBandA" type="ColorRect" parent="."]
+offset_left = -120.0
+offset_top = 226.0
+offset_right = 1718.0
+offset_bottom = 318.0
+color = Color(0.564706, 0.862745, 0.956863, 0.06)
+
+[node name="FogBandB" type="ColorRect" parent="."]
+offset_left = -60.0
+offset_top = 706.0
+offset_right = 1684.0
+offset_bottom = 790.0
+color = Color(0.662745, 0.980392, 0.870588, 0.05)
+
+[node name="VignetteTop" type="ColorRect" parent="."]
+offset_left = -76.0
+offset_top = -52.0
+offset_right = 1678.0
+offset_bottom = 150.0
+color = Color(0, 0, 0, 0.16)
+
+[node name="VignetteBottom" type="ColorRect" parent="."]
+offset_left = -74.0
+offset_top = 748.0
+offset_right = 1668.0
+offset_bottom = 998.0
+color = Color(0, 0, 0, 0.22)
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="FarIsland" type="Polygon2D" parent="World"]
+position = Vector2(820, 170)
+color = Color(0.101961, 0.180392, 0.258824, 0.9)
+polygon = PackedVector2Array(-180, -50, 120, -90, 220, -10, 146, 62, -110, 48)
+
+[node name="MidIsland" type="Polygon2D" parent="World"]
+position = Vector2(266, 248)
+color = Color(0.121569, 0.223529, 0.305882, 0.72)
+polygon = PackedVector2Array(-140, -34, 106, -64, 188, 10, 92, 54, -124, 42)
+
+[node name="FarShardLeft" type="Polygon2D" parent="World"]
+position = Vector2(188, 156)
+color = Color(0.141176, 0.258824, 0.345098, 0.44)
+polygon = PackedVector2Array(-76, -18, 68, -44, 116, -4, 38, 34, -82, 24)
+
+[node name="FarShardRight" type="Polygon2D" parent="World"]
+position = Vector2(1314, 206)
+color = Color(0.121569, 0.247059, 0.286275, 0.4)
+polygon = PackedVector2Array(-98, -22, 74, -40, 124, -2, 52, 30, -94, 24)
+
+[node name="RuinFrameA" type="Polygon2D" parent="World"]
+position = Vector2(426, 322)
+color = Color(0.772549, 0.92549, 1, 0.18)
+polygon = PackedVector2Array(-18, -86, 10, -86, 10, 34, 46, 34, 46, 60, -50, 60, -50, 34, -18, 34)
+
+[node name="RuinFrameB" type="Polygon2D" parent="World"]
+position = Vector2(1082, 264)
+color = Color(0.647059, 0.992157, 0.862745, 0.18)
+polygon = PackedVector2Array(-22, -96, 8, -96, 8, 34, 48, 34, 48, 62, -54, 62, -54, 34, -22, 34)
+
+[node name="BeaconA" type="Polygon2D" parent="World"]
+position = Vector2(470, 336)
+color = Color(0.490196, 0.894118, 1, 0.12)
+polygon = PackedVector2Array(-8, -92, 8, -92, 30, 0, -30, 0)
+
+[node name="BeaconB" type="Polygon2D" parent="World"]
+position = Vector2(1110, 266)
+color = Color(0.647059, 0.992157, 0.862745, 0.1)
+polygon = PackedVector2Array(-8, -84, 8, -84, 28, 0, -28, 0)
+
+[node name="BridgeShadow" type="Polygon2D" parent="World"]
+position = Vector2(780, 594)
+color = Color(0, 0, 0, 0.18)
+polygon = PackedVector2Array(-520, -12, 530, -12, 590, 48, -450, 48)
+
+[node name="MainPlatform" type="StaticBody2D" parent="World"]
+position = Vector2(800, 610)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/MainPlatform"]
+shape = SubResource("1")
+
+[node name="Top" type="Polygon2D" parent="World/MainPlatform"]
+color = Color(0.278431, 0.741176, 0.894118, 0.95)
+polygon = PackedVector2Array(-590, -45, 590, -45, 535, 16, -555, 16)
+
+[node name="Side" type="Polygon2D" parent="World/MainPlatform"]
+color = Color(0.0784314, 0.152941, 0.227451, 1)
+polygon = PackedVector2Array(-555, 16, 535, 16, 586, 66, -508, 66)
+
+[node name="RailGlow" type="Polygon2D" parent="World/MainPlatform"]
+color = Color(0.839216, 0.976471, 1, 0.24)
+polygon = PackedVector2Array(-518, -28, 514, -28, 488, -18, -494, -18)
+
+[node name="UpperLeftPlatform" type="StaticBody2D" parent="World"]
+position = Vector2(470, 402)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/UpperLeftPlatform"]
+shape = SubResource("1")
+scale = Vector2(0.34, 0.55)
+
+[node name="Top" type="Polygon2D" parent="World/UpperLeftPlatform"]
+color = Color(0.488235, 0.894118, 1, 0.95)
+polygon = PackedVector2Array(-200, -32, 170, -32, 148, 8, -188, 8)
+
+[node name="Side" type="Polygon2D" parent="World/UpperLeftPlatform"]
+color = Color(0.0784314, 0.152941, 0.227451, 1)
+polygon = PackedVector2Array(-188, 8, 148, 8, 176, 36, -168, 36)
+
+[node name="RailGlow" type="Polygon2D" parent="World/UpperLeftPlatform"]
+color = Color(0.839216, 0.976471, 1, 0.22)
+polygon = PackedVector2Array(-160, -18, 132, -18, 118, -10, -148, -10)
+
+[node name="UpperRightPlatform" type="StaticBody2D" parent="World"]
+position = Vector2(1110, 336)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/UpperRightPlatform"]
+shape = SubResource("1")
+scale = Vector2(0.31, 0.5)
+
+[node name="Top" type="Polygon2D" parent="World/UpperRightPlatform"]
+color = Color(0.356863, 0.827451, 0.678431, 0.95)
+polygon = PackedVector2Array(-182, -30, 152, -30, 138, 10, -168, 10)
+
+[node name="Side" type="Polygon2D" parent="World/UpperRightPlatform"]
+color = Color(0.0745098, 0.176471, 0.184314, 1)
+polygon = PackedVector2Array(-168, 10, 138, 10, 162, 38, -150, 38)
+
+[node name="RailGlow" type="Polygon2D" parent="World/UpperRightPlatform"]
+color = Color(0.768627, 1, 0.890196, 0.2)
+polygon = PackedVector2Array(-148, -18, 122, -18, 108, -10, -136, -10)
+
+[node name="PlayerShadow" type="Polygon2D" parent="World"]
+position = Vector2(770, 661)
+color = Color(0, 0, 0, 0.24)
+polygon = PackedVector2Array(-24, -6, 24, -6, 36, 8, -36, 8)
+
+[node name="Player" type="CharacterBody2D" parent="World"]
+position = Vector2(770, 578)
+script = ExtResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player"]
+shape = SubResource("2")
+
+[node name="Camera2D" type="Camera2D" parent="World/Player"]
+position = Vector2(0, -34)
+enabled = true
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="Body" type="Polygon2D" parent="World/Player"]
+color = Color(0.960784, 0.980392, 1, 1)
+polygon = PackedVector2Array(-18, 24, -22, -8, -4, -28, 12, -18, 20, 8, 8, 24)
+
+[node name="Accent" type="Polygon2D" parent="World/Player"]
+color = Color(0.490196, 0.894118, 1, 1)
+polygon = PackedVector2Array(-6, 10, 8, 10, 14, 22, -12, 22)
+
+[node name="HelmetGlow" type="Polygon2D" parent="World/Player"]
+color = Color(0.490196, 0.894118, 1, 0.7)
+polygon = PackedVector2Array(-8, -6, 8, -6, 4, 2, -4, 2)
+
+[node name="ScanA" type="Area2D" parent="World"]
+position = Vector2(470, 362)
+groups = ["scan_pickups"]
+metadata/_custom_type_script = ""
+metadata/scan_name = "Aster Lens"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/ScanA"]
+shape = SubResource("2")
+scale = Vector2(0.8, 0.8)
+
+[node name="Core" type="Polygon2D" parent="World/ScanA"]
+color = Color(0.490196, 0.894118, 1, 1)
+polygon = PackedVector2Array(0, -24, 20, 0, 0, 24, -20, 0)
+
+[node name="Ring" type="Polygon2D" parent="World/ScanA"]
+color = Color(0.490196, 0.894118, 1, 0.22)
+polygon = PackedVector2Array(0, -36, 36, 0, 0, 36, -36, 0)
+
+[node name="ScanB" type="Area2D" parent="World"]
+position = Vector2(1110, 292)
+groups = ["scan_pickups"]
+metadata/scan_name = "Pulse Seed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/ScanB"]
+shape = SubResource("2")
+scale = Vector2(0.8, 0.8)
+
+[node name="Core" type="Polygon2D" parent="World/ScanB"]
+color = Color(0.490196, 1, 0.788235, 1)
+polygon = PackedVector2Array(0, -24, 20, 0, 0, 24, -20, 0)
+
+[node name="Ring" type="Polygon2D" parent="World/ScanB"]
+color = Color(0.647059, 0.992157, 0.862745, 0.22)
+polygon = PackedVector2Array(0, -36, 36, 0, 0, 36, -36, 0)
+
+[node name="ScanC" type="Area2D" parent="World"]
+position = Vector2(1320, 570)
+groups = ["scan_pickups"]
+metadata/scan_name = "Drift Archive"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/ScanC"]
+shape = SubResource("2")
+scale = Vector2(0.8, 0.8)
+
+[node name="Core" type="Polygon2D" parent="World/ScanC"]
+color = Color(1, 0.901961, 0.556863, 1)
+polygon = PackedVector2Array(0, -24, 20, 0, 0, 24, -20, 0)
+
+[node name="Ring" type="Polygon2D" parent="World/ScanC"]
+color = Color(1, 0.901961, 0.556863, 0.22)
+polygon = PackedVector2Array(0, -36, 36, 0, 0, 36, -36, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="MarginContainer" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 1576.0
+offset_bottom = 876.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HUDRoot" type="VBoxContainer" parent="CanvasLayer/HUD"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="CanvasLayer/HUD/HUDRoot"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.933333, 0.976471, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Echo Drift"
+
+[node name="ObjectiveLabel" type="Label" parent="CanvasLayer/HUD/HUDRoot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.913725, 0.956863, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Traverse the ruin and recover the three scattered relic scans."
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer/HUD/HUDRoot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.741176, 0.882353, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "0 / 3 relic scans recovered"
+
+[node name="HintLabel" type="Label" parent="CanvasLayer/HUD/HUDRoot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.564706, 0.662745, 0.741176, 1)
+theme_override_font_sizes/font_size = 15
+text = "Move with WASD or arrow keys."
+
+[node name="Spacer" type="Control" parent="CanvasLayer/HUD/HUDRoot"]
+custom_minimum_size = Vector2(0, 470)
+layout_mode = 2
+
+[node name="StatusPanel" type="PanelContainer" parent="CanvasLayer/HUD/HUDRoot"]
+layout_mode = 2
+custom_minimum_size = Vector2(560, 0)
+theme_override_styles/panel = SubResource("3")
+
+[node name="StatusMargin" type="MarginContainer" parent="CanvasLayer/HUD/HUDRoot/StatusPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 14
+
+[node name="StatusLabel" type="RichTextLabel" parent="CanvasLayer/HUD/HUDRoot/StatusPanel/StatusMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+text = "Recover relic scans to demonstrate traversal, collectible logic, and environmental storytelling."
+
+[node name="FinishPanel" type="PanelContainer" parent="CanvasLayer/HUD/HUDRoot"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+custom_minimum_size = Vector2(560, 0)
+theme_override_styles/panel = SubResource("4")
+
+[node name="FinishMargin" type="MarginContainer" parent="CanvasLayer/HUD/HUDRoot/FinishPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 14
+
+[node name="FinishText" type="RichTextLabel" parent="CanvasLayer/HUD/HUDRoot/FinishPanel/FinishMargin"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+text = "[b]Vertical slice complete.[/b]\nThis sample showcases movement, environmental composition, collectible progression, and strong portfolio-focused presentation."
+
+[node name="TitleCardLayer" type="CanvasLayer" parent="."]
+
+[node name="TitleCard" type="PanelContainer" parent="TitleCardLayer"]
+unique_name_in_owner = true
+offset_left = 506.0
+offset_top = 246.0
+offset_right = 1094.0
+offset_bottom = 612.0
+theme_override_styles/panel = SubResource("4")
+
+[node name="TitleCardMargin" type="MarginContainer" parent="TitleCardLayer/TitleCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28
+
+[node name="TitleCardBox" type="VBoxContainer" parent="TitleCardLayer/TitleCard/TitleCardMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleCardKicker" type="Label" parent="TitleCardLayer/TitleCard/TitleCardMargin/TitleCardBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.576471, 0.705882, 0.788235, 1)
+theme_override_font_sizes/font_size = 16
+text = "GODOT 4 EXPLORATION VERTICAL SLICE"
+
+[node name="TitleCardTitle" type="Label" parent="TitleCardLayer/TitleCard/TitleCardMargin/TitleCardBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Echo Drift"
+
+[node name="TitleCardBody" type="RichTextLabel" parent="TitleCardLayer/TitleCard/TitleCardMargin/TitleCardBox"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+text = "Cross a suspended ruin, recover lost relic signals, and demonstrate movement feel, environment composition, and collectible-driven progression in one compact portfolio piece."
+
+[node name="TitleCardHint" type="Label" parent="TitleCardLayer/TitleCard/TitleCardMargin/TitleCardBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.490196, 0.894118, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "Movement: WASD or arrow keys"
